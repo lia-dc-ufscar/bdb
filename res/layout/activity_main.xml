@@ -1,0 +1,99 @@
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+	android:orientation="vertical"
+    android:columnCount="2"
+	android:rowCount="1"
+	android:background="@drawable/background"
+	tools:context=".MainActivity" >
+
+    <!--  Buttons -->
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:orientation="vertical" >
+
+	    <ImageButton
+	        android:id="@+id/clear_btn"
+	        android:layout_width="53dp"
+	        android:layout_height="128dp"
+	        android:contentDescription="@string/clear"
+	        android:src="@drawable/clear"
+	        android:background="@drawable/button"
+	        android:layout_marginBottom="35dp" />
+	    
+	    <ImageButton
+	        android:id="@+id/blue_marker"
+	        android:layout_width="53dp"
+	        android:layout_height="128dp"
+	        android:contentDescription="@string/blue_marker"
+	        android:src="@drawable/blue_marker"
+	        android:background="@drawable/button"
+	        android:layout_marginBottom="3dp" />
+
+	    <ImageButton
+	        android:id="@+id/red_marker"
+	        android:layout_width="53dp"
+	        android:layout_height="128dp"
+	        android:contentDescription="@string/red_marker"
+	        android:src="@drawable/red_marker"
+	        android:background="@drawable/button"
+	        android:layout_marginBottom="3dp" />
+	    
+	    <ImageButton
+	        android:id="@+id/green_marker"
+	        android:layout_width="53dp"
+	        android:layout_height="128dp"
+	        android:contentDescription="@string/green_marker"
+	        android:src="@drawable/green_marker"
+	        android:background="@drawable/button"
+	        android:layout_marginBottom="3dp" />
+	    
+	    <ImageButton
+	        android:id="@+id/erase_btn"
+	        android:layout_width="53dp"
+	        android:layout_height="128dp"
+	        android:contentDescription="@string/erase"
+	        android:src="@drawable/erase"
+	        android:background="@drawable/button"
+	        android:layout_marginBottom="35dp" />
+	    
+	    <ImageButton
+	        android:id="@+id/solid_line"
+	        android:layout_width="53dp"
+	        android:layout_height="128dp"
+	        android:contentDescription="@string/solid_line"
+	        android:src="@drawable/solid_line"
+	        android:background="@drawable/button"
+	        android:layout_marginBottom="3dp" />
+	    
+	    <ImageButton
+	        android:id="@+id/dashed_line"
+	        android:layout_width="53dp"
+	        android:layout_height="128dp"
+	        android:contentDescription="@string/dashed_line"
+	        android:src="@drawable/dashed_line"
+	        android:background="@drawable/button"
+	        android:layout_marginBottom="3dp" />
+	    
+	    <ImageButton
+	        android:id="@+id/ball_kick"
+	        android:layout_width="53dp"
+	        android:layout_height="128dp"
+	        android:contentDescription="@string/ball_kick"
+	        android:src="@drawable/ball_kick"
+	        android:background="@drawable/button" />
+	    
+	</LinearLayout>
+		
+   	<!-- Court -->
+    <com.liaufscar.bdb.DrawingView
+        android:id="@+id/drawing"
+        android:layout_width="740dp"
+        android:layout_height="1232dp"
+        android:layout_gravity="fill"
+        android:background="@drawable/court" />
+	    
+</GridLayout>

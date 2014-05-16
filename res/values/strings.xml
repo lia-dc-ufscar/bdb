@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="app_name">BDB</string>
+	<string name="action_settings">Settings</string>
+	<string name="erase">Erase</string>
+	<string name="dashed_line">Dashed Line</string>
+	<string name="solid_line">Solid Line</string>
+	<string name="ball_kick">Ball Kick</string>
+	<string name="red_marker">Red Marker</string>
+	<string name="blue_marker">Blue Marker</string>
+	<string name="green_marker">Green Marker</string>
+	<string name="clear">Clear</string>
+
+</resources>
