@@ -4,7 +4,6 @@ import com.liaufscar.bdb.DrawingView;
 import com.liaufscar.bdb.R;
 import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
@@ -20,7 +19,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	private DrawingView drawView;
 
 	// Buttons
-	private ImageButton blueMarker, redMarker, greenMarker, eraseBtn, clearBtn;
+	private ImageButton blueMarker, redMarker, greenMarker, eraseBtn, clearBtn, solidBtn, dashedBtn, kickBtn;
 	
 	// Local variables
 	private int brushSize = 6;
@@ -65,30 +64,18 @@ public class MainActivity extends Activity implements OnClickListener {
 		clearBtn = (ImageButton) findViewById(R.id.clear_btn);
 		clearBtn.setOnClickListener(this);
 		
+		// Solid line button
+		solidBtn = (ImageButton) findViewById(R.id.solid_line);
+		solidBtn.setOnClickListener(this);
+		
+		// Dashed line button
+		dashedBtn = (ImageButton) findViewById(R.id.dashed_line);
+		dashedBtn.setOnClickListener(this);
+		
+		// Ball kick button
+		kickBtn = (ImageButton) findViewById(R.id.ball_kick);
+		kickBtn.setOnClickListener(this);
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
-
-	//user clicked paint
-	/*public void paintClicked(View view){
-		//use chosen color
-
-
-		if(view!=currPaint){
-			ImageButton imgView = (ImageButton)view;
-			//String color = view.getTag().toString();
-			//drawView.setColor(color);
-			//update ui
-			imgView.setImageDrawable(getResources().getDrawable(R.drawable.paint_pressed));
-			currPaint.setImageDrawable(getResources().getDrawable(R.drawable.blue_marker));
-			currPaint=(ImageButton)view;
-		}
-	}*/
 
 	@Override
 	public void onClick(View view){
