@@ -52,13 +52,15 @@ public class DrawingView extends View {
 		drawPath = new Path();
 		drawPaint = new Paint();
 		drawPaint.setColor(paintColor);
-		drawPaint.setPathEffect(new DashPathEffect(new float[]{5, 10, 15, 20}, 0));
 		drawPaint.setAntiAlias(true);
 		drawPaint.setStrokeWidth(brushSize);
 		drawPaint.setStyle(Paint.Style.STROKE);
 		drawPaint.setStrokeJoin(Paint.Join.ROUND);
 		drawPaint.setStrokeCap(Paint.Cap.ROUND);
 		canvasPaint = new Paint(Paint.DITHER_FLAG);
+		
+		// Start effect with solid line
+		effects = new DashPathEffect(new float[] {1, 1}, 0);
 	}
 
 	//size assigned to view
@@ -130,14 +132,25 @@ public class DrawingView extends View {
 	// Set dashed line on/off
 	public void setDash(boolean dash) {
 		if (dash)
-			effects = new DashPathEffect(new float[] {25, 15}, 0);
+			effects = new DashPathEffect(new float[] {30, 25}, 0);
 		else
-			effects = new DashPathEffect(new float[] {0}, 0);
+			effects = new DashPathEffect(new float[] {1, 1}, 0);
 	}
 	
 	// Start new drawing
 	public void startNew() {
 		drawCanvas.drawColor(0, PorterDuff.Mode.CLEAR);
 		invalidate();
+	}
+	
+	// Calculate distance between points
+	public double distance(int x, int y, int x0, int y0) {
+		double a, b, result;
+		a = x - x0;
+		a = Math.pow(a, 2);
+		b = y - y0;
+		b = Math.pow(b, 2);
+		result = Math.sqrt(a + b);
+		return result;
 	}
 }
