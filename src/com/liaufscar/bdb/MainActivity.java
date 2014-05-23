@@ -19,7 +19,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	private DrawingView drawView;
 
 	// Buttons
-	private ImageButton blueMarker, redMarker, greenMarker, eraseBtn, clearBtn, solidBtn, dashedBtn, kickBtn;
+	private ImageButton redSolid, redDashed, redKick, redPlayer, blueSolid, blueDashed, blueKick, bluePlayer, eraseBtn, clearBtn;
 	
 	// Local variables
 	private int brushSize = 6;
@@ -44,18 +44,38 @@ public class MainActivity extends Activity implements OnClickListener {
 		// Button Listeners
 		//
 		
-		// Blue Marker
-		blueMarker = (ImageButton) findViewById(R.id.blue_marker);
-		blueMarker.setOnClickListener(this);
+		// Red solid line
+		redSolid = (ImageButton) findViewById(R.id.red_solid);
+		redSolid.setOnClickListener(this);
 		
-		// Red Marker
-		redMarker = (ImageButton)findViewById(R.id.red_marker);
-		redMarker.setOnClickListener(this);
+		// Red dashed line
+		redDashed = (ImageButton) findViewById(R.id.red_dashed);
+		redDashed.setOnClickListener(this);
 		
-		// Green Marker
-		greenMarker = (ImageButton)findViewById(R.id.green_marker);
-		greenMarker.setOnClickListener(this);
+		// Red ball kicking line
+		redKick = (ImageButton) findViewById(R.id.red_kick);
+		redKick.setOnClickListener(this);
 
+		// Red player
+		redPlayer = (ImageButton) findViewById(R.id.red_player);
+		redPlayer.setOnClickListener(this);
+		
+		// Blue solid line
+		blueSolid = (ImageButton) findViewById(R.id.blue_solid);
+		blueSolid.setOnClickListener(this);
+
+		// Blue dashed line
+		blueDashed = (ImageButton) findViewById(R.id.blue_dashed);
+		blueDashed.setOnClickListener(this);
+
+		// Blue ball kicking line
+		blueKick = (ImageButton) findViewById(R.id.blue_kick);
+		blueKick.setOnClickListener(this);
+
+		// Blue player
+		bluePlayer = (ImageButton) findViewById(R.id.blue_player);
+		bluePlayer.setOnClickListener(this);
+		
 		// Erase button
 		eraseBtn = (ImageButton) findViewById(R.id.erase_btn);
 		eraseBtn.setOnClickListener(this);
@@ -64,23 +84,8 @@ public class MainActivity extends Activity implements OnClickListener {
 		clearBtn = (ImageButton) findViewById(R.id.clear_btn);
 		clearBtn.setOnClickListener(this);
 		
-		// Solid line button
-		solidBtn = (ImageButton) findViewById(R.id.solid_line);
-		solidBtn.setOnClickListener(this);
-		
-		// Dashed line button
-		dashedBtn = (ImageButton) findViewById(R.id.dashed_line);
-		dashedBtn.setOnClickListener(this);
-		
-		// Ball kick button
-		kickBtn = (ImageButton) findViewById(R.id.ball_kick);
-		kickBtn.setOnClickListener(this);
-		
-		// Set blueMarker as active because it is the starting color
-		blueMarker.setBackgroundResource(R.drawable.button_active);
-		
-		// Set solidBtn as active because it is the starting line type
-		solidBtn.setBackgroundResource(R.drawable.button_active);
+		// Set blueSolid as active
+		blueSolid.setBackgroundResource(R.drawable.button_active);
 	}
 
 	@Override
@@ -136,6 +141,9 @@ public class MainActivity extends Activity implements OnClickListener {
 			
 			// Change brush size
 			drawView.setBrushSize(eraserSize);
+			
+			// Set dash as false
+			drawView.setDash(false);
 			
 			// Set eraseBtn as active and others as inactive
 			blueMarker.setBackgroundResource(R.drawable.button);

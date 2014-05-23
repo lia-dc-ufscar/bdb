@@ -1,6 +1,5 @@
 package com.liaufscar.bdb;
 
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -48,8 +47,7 @@ public class DrawingView extends View {
 	
 	// Ball kicking
 	private boolean ballKick;
-	
-	
+
 	public DrawingView(Context context, AttributeSet attrs){
 		super(context, attrs);
 		setupDrawing();

@@ -4,12 +4,14 @@
 	<string name="app_name">BDB</string>
 	<string name="action_settings">Settings</string>
 	<string name="erase">Erase</string>
-	<string name="dashed_line">Dashed Line</string>
-	<string name="solid_line">Solid Line</string>
-	<string name="ball_kick">Ball Kick</string>
-	<string name="red_marker">Red Marker</string>
-	<string name="blue_marker">Blue Marker</string>
-	<string name="green_marker">Green Marker</string>
+	<string name="red_solid">Red Solid Line</string>
+	<string name="red_dashed">Red Dashed Line</string>
+	<string name="red_kick">Red Ball Kick Line</string>
+	<string name="red_player">Red Player</string>
+	<string name="blue_solid">Blue Solid Line</string>
+	<string name="blue_dashed">Blue Dashed Line</string>
+	<string name="blue_kick">Blue Ball Kick Line</string>
+	<string name="blue_player">Blue Player</string>
 	<string name="clear">Clear</string>
 
 </resources>

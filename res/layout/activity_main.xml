@@ -18,36 +18,81 @@
 	    <ImageButton
 	        android:id="@+id/clear_btn"
 	        android:layout_width="53dp"
-	        android:layout_height="128dp"
+	        android:layout_height="103dp"
 	        android:contentDescription="@string/clear"
 	        android:src="@drawable/clear"
 	        android:background="@drawable/button"
 	        android:layout_marginBottom="35dp" />
 	    
 	    <ImageButton
-	        android:id="@+id/blue_marker"
+	        android:id="@+id/red_player"
 	        android:layout_width="53dp"
-	        android:layout_height="128dp"
-	        android:contentDescription="@string/blue_marker"
-	        android:src="@drawable/blue_marker"
-	        android:background="@drawable/button"
-	        android:layout_marginBottom="3dp" />
-
-	    <ImageButton
-	        android:id="@+id/red_marker"
-	        android:layout_width="53dp"
-	        android:layout_height="128dp"
-	        android:contentDescription="@string/red_marker"
-	        android:src="@drawable/red_marker"
+	        android:layout_height="103dp"
+	        android:contentDescription="@string/red_player"
+	        android:src="@drawable/red_player"
 	        android:background="@drawable/button"
 	        android:layout_marginBottom="3dp" />
 	    
 	    <ImageButton
-	        android:id="@+id/green_marker"
+	        android:id="@+id/red_kick"
 	        android:layout_width="53dp"
-	        android:layout_height="128dp"
-	        android:contentDescription="@string/green_marker"
-	        android:src="@drawable/green_marker"
+	        android:layout_height="103dp"
+	        android:contentDescription="@string/red_kick"
+	        android:src="@drawable/red_kick"
+	        android:background="@drawable/button"
+	        android:layout_marginBottom="3dp" />
+
+	    <ImageButton
+	        android:id="@+id/red_dashed"
+	        android:layout_width="53dp"
+	        android:layout_height="103dp"
+	        android:contentDescription="@string/red_dashed"
+	        android:src="@drawable/red_dashed"
+	        android:background="@drawable/button"
+	        android:layout_marginBottom="3dp" />
+	    
+	    <ImageButton
+	        android:id="@+id/red_solid"
+	        android:layout_width="53dp"
+	        android:layout_height="103dp"
+	        android:contentDescription="@string/red_solid"
+	        android:src="@drawable/red_solid"
+	        android:background="@drawable/button"
+	        android:layout_marginBottom="3dp" />
+	    
+	    <ImageButton
+	        android:id="@+id/blue_solid"
+	        android:layout_width="53dp"
+	        android:layout_height="103dp"
+	        android:contentDescription="@string/blue_solid"
+	        android:src="@drawable/blue_solid"
+	        android:background="@drawable/button"
+	        android:layout_marginBottom="3dp" />
+
+	    <ImageButton
+	        android:id="@+id/blue_dashed"
+	        android:layout_width="53dp"
+	        android:layout_height="103dp"
+	        android:contentDescription="@string/blue_dashed"
+	        android:src="@drawable/blue_dashed"
+	        android:background="@drawable/button"
+	        android:layout_marginBottom="3dp" />
+	    
+	    <ImageButton
+	        android:id="@+id/blue_kick"
+	        android:layout_width="53dp"
+	        android:layout_height="103dp"
+	        android:contentDescription="@string/blue_kick"
+	        android:src="@drawable/blue_kick"
+	        android:background="@drawable/button"
+	        android:layout_marginBottom="3dp" />
+	    
+	    <ImageButton
+	        android:id="@+id/blue_player"
+	        android:layout_width="53dp"
+	        android:layout_height="103dp"
+	        android:contentDescription="@string/blue_player"
+	        android:src="@drawable/blue_player"
 	        android:background="@drawable/button"
 	        android:layout_marginBottom="3dp" />
 	    
@@ -59,32 +104,6 @@
 	        android:src="@drawable/erase"
 	        android:background="@drawable/button"
 	        android:layout_marginBottom="35dp" />
-	    
-	    <ImageButton
-	        android:id="@+id/solid_line"
-	        android:layout_width="53dp"
-	        android:layout_height="128dp"
-	        android:contentDescription="@string/solid_line"
-	        android:src="@drawable/solid_line"
-	        android:background="@drawable/button"
-	        android:layout_marginBottom="3dp" />
-	    
-	    <ImageButton
-	        android:id="@+id/dashed_line"
-	        android:layout_width="53dp"
-	        android:layout_height="128dp"
-	        android:contentDescription="@string/dashed_line"
-	        android:src="@drawable/dashed_line"
-	        android:background="@drawable/button"
-	        android:layout_marginBottom="3dp" />
-	    
-	    <ImageButton
-	        android:id="@+id/ball_kick"
-	        android:layout_width="53dp"
-	        android:layout_height="128dp"
-	        android:contentDescription="@string/ball_kick"
-	        android:src="@drawable/ball_kick"
-	        android:background="@drawable/button" />
 	    
 	</LinearLayout>
 		
