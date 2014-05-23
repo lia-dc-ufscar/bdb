@@ -75,31 +75,101 @@ public class MainActivity extends Activity implements OnClickListener {
 		// Ball kick button
 		kickBtn = (ImageButton) findViewById(R.id.ball_kick);
 		kickBtn.setOnClickListener(this);
+		
+		// Set blueMarker as active because it is the starting color
+		blueMarker.setBackgroundResource(R.drawable.button_active);
+		
+		// Set solidBtn as active because it is the starting line type
+		solidBtn.setBackgroundResource(R.drawable.button_active);
 	}
 
 	@Override
 	public void onClick(View view){
 		if (view.getId() == R.id.blue_marker) {
+			// Set eraser as false
 			drawView.setErase(false);
+			
+			// Change brush size
 			drawView.setBrushSize(brushSize);
+			
+			// Set brush color
 			drawView.setColor(0xFF0000FF);
+			
+			// Set blueBtn as active and others as inactive
+			blueMarker.setBackgroundResource(R.drawable.button_active);
+			redMarker.setBackgroundResource(R.drawable.button);
+			greenMarker.setBackgroundResource(R.drawable.button);
+			eraseBtn.setBackgroundResource(R.drawable.button);
 		} else if (view.getId() == R.id.red_marker) {
+			// Set eraser as false
 			drawView.setErase(false);
+			
+			// Change brush size
 			drawView.setBrushSize(brushSize);
+			
+			// Set brush color
 			drawView.setColor(0xFFFF0000);
+			
+			// Set redMarker as active and others as inactive
+			blueMarker.setBackgroundResource(R.drawable.button);
+			redMarker.setBackgroundResource(R.drawable.button_active);
+			greenMarker.setBackgroundResource(R.drawable.button);
+			eraseBtn.setBackgroundResource(R.drawable.button);
 		} else if (view.getId() == R.id.green_marker) {
+			// Set eraser as false
 			drawView.setErase(false);
+			
+			// Change brush size
 			drawView.setBrushSize(brushSize);
+			
+			// Set brush color
 			drawView.setColor(0xFF00FF00);
+			
+			// Set greenMarker as active and others as inactive
+			blueMarker.setBackgroundResource(R.drawable.button);
+			redMarker.setBackgroundResource(R.drawable.button);
+			greenMarker.setBackgroundResource(R.drawable.button_active);
+			eraseBtn.setBackgroundResource(R.drawable.button);
 		} else if (view.getId() == R.id.erase_btn) {
+			// Set eraser as true
 			drawView.setErase(true);
+			
+			// Change brush size
 			drawView.setBrushSize(eraserSize);
-		} else if (view.getId() == R.id.dashed_line)
+			
+			// Set eraseBtn as active and others as inactive
+			blueMarker.setBackgroundResource(R.drawable.button);
+			redMarker.setBackgroundResource(R.drawable.button);
+			greenMarker.setBackgroundResource(R.drawable.button);
+			eraseBtn.setBackgroundResource(R.drawable.button_active);
+		} else if (view.getId() == R.id.dashed_line) {
+			// Set dash as true
 			drawView.setDash(true);
-		else if (view.getId() == R.id.solid_line)
+			
+			// Set dashedBtn as active and others as inactive
+			dashedBtn.setBackgroundResource(R.drawable.button_active);
+			solidBtn.setBackgroundResource(R.drawable.button);
+			kickBtn.setBackgroundResource(R.drawable.button);
+		} else if (view.getId() == R.id.solid_line) {
+			// Set dash as false
 			drawView.setDash(false);
-		else if (view.getId() == R.id.clear_btn)
+			
+			// Set solidBtn as active and others as inactive
+			dashedBtn.setBackgroundResource(R.drawable.button);
+			solidBtn.setBackgroundResource(R.drawable.button_active);
+			kickBtn.setBackgroundResource(R.drawable.button);
+		} else if (view.getId() == R.id.ball_kick) {
+			// Set kick as true
+			drawView.setKick();
+			
+			// Set kickBtn as active and others as inactive
+			dashedBtn.setBackgroundResource(R.drawable.button);
+			solidBtn.setBackgroundResource(R.drawable.button);
+			kickBtn.setBackgroundResource(R.drawable.button_active);
+		} else if (view.getId() == R.id.clear_btn) {
+			// Clear canvas
 			drawView.startNew();
+		}
 	}
 
 }

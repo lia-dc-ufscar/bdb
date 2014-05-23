@@ -24,21 +24,32 @@ public class DrawingView extends View {
 
 	// Drawing path
 	private Path drawPath;
+	
 	// Drawing and canvas paint
 	private Paint drawPaint, canvasPaint;
+	
 	// Initial color
 	private int paintColor = 0xFF0000FF; // KKCCMMYY
+	
 	// Canvas
 	private Canvas drawCanvas;
+	
 	// Canvas bitmap
 	private Bitmap canvasBitmap;
+	
 	// Brush sizes
 	private float brushSize;
-	// Erase flag
-//	private boolean isErase = false;
-	// Effects (to set dash on/off)
+	
+	// Dash effect
 	private PathEffect effects;
-
+	
+	// Start point for ball kicking
+	private float startX, startY;
+	
+	// Ball kicking
+	private boolean ballKick;
+	
+	
 	public DrawingView(Context context, AttributeSet attrs){
 		super(context, attrs);
 		setupDrawing();
@@ -61,9 +72,12 @@ public class DrawingView extends View {
 		
 		// Start effect with solid line
 		effects = new DashPathEffect(new float[] {1, 1}, 0);
+		
+		// Start ball kicking at off
+		ballKick = false;
 	}
 
-	//size assigned to view
+	// Size assigned to view
 	@Override
 	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
 		super.onSizeChanged(w, h, oldw, oldh);
@@ -71,7 +85,7 @@ public class DrawingView extends View {
 		drawCanvas = new Canvas(canvasBitmap);
 	}
 
-	//draw the view - will be called after touch event
+	// Draw the view - will be called after touch event
 	@Override
 	protected void onDraw(Canvas canvas) {
 		canvas.drawBitmap(canvasBitmap, 0, 0, canvasPaint);
@@ -84,13 +98,21 @@ public class DrawingView extends View {
 		float touchX = event.getX();
 		float touchY = event.getY();
 		drawPaint.setPathEffect(effects);
-		//respond to down, move and up events
+		// Respond to down, move and up events
 		switch (event.getAction()) {
 		case MotionEvent.ACTION_DOWN:
 			drawPath.moveTo(touchX, touchY);
+			startX = touchX;
+			startY = touchY;
 			break;
 		case MotionEvent.ACTION_MOVE:
-			drawPath.lineTo(touchX, touchY);
+			if (ballKick) {
+				if (this.distance(touchX, touchY, startX, startY) >= 5) {
+					drawPaint.setColor(0x000000FF);
+					drawPath.lineTo(touchX, touchY);
+				}
+			} else
+				drawPath.lineTo(touchX, touchY);
 			break;
 		case MotionEvent.ACTION_UP:
 			drawPath.lineTo(touchX, touchY);
@@ -115,8 +137,7 @@ public class DrawingView extends View {
 
 	// Set brush size
 	public void setBrushSize(float newSize){
-		float pixelAmount = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 
-				newSize, getResources().getDisplayMetrics());
+		float pixelAmount = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, newSize, getResources().getDisplayMetrics());
 		brushSize = pixelAmount;
 		drawPaint.setStrokeWidth(brushSize);
 	}
@@ -131,10 +152,19 @@ public class DrawingView extends View {
 
 	// Set dashed line on/off
 	public void setDash(boolean dash) {
-		if (dash)
+		if (dash) {
+			ballKick = false;
 			effects = new DashPathEffect(new float[] {30, 25}, 0);
-		else
+		} else {
+			ballKick = false;
 			effects = new DashPathEffect(new float[] {1, 1}, 0);
+		}
+	}
+	
+	// Set ball kick on/off
+	public void setKick() {
+		effects = new DashPathEffect(new float[] {1, 1}, 0);
+		ballKick = true;
 	}
 	
 	// Start new drawing
@@ -144,7 +174,7 @@ public class DrawingView extends View {
 	}
 	
 	// Calculate distance between points
-	public double distance(int x, int y, int x0, int y0) {
+	public double distance(float x, float y, float x0, float y0) {
 		double a, b, result;
 		a = x - x0;
 		a = Math.pow(a, 2);
