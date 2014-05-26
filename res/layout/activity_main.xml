@@ -58,7 +58,7 @@
 	        android:contentDescription="@string/red_solid"
 	        android:src="@drawable/red_solid"
 	        android:background="@drawable/button"
-	        android:layout_marginBottom="3dp" />
+	        android:layout_marginBottom="35dp" />
 	    
 	    <ImageButton
 	        android:id="@+id/blue_solid"
@@ -94,7 +94,7 @@
 	        android:contentDescription="@string/blue_player"
 	        android:src="@drawable/blue_player"
 	        android:background="@drawable/button"
-	        android:layout_marginBottom="3dp" />
+	        android:layout_marginBottom="35dp" />
 	    
 	    <ImageButton
 	        android:id="@+id/erase_btn"
@@ -102,8 +102,7 @@
 	        android:layout_height="128dp"
 	        android:contentDescription="@string/erase"
 	        android:src="@drawable/erase"
-	        android:background="@drawable/button"
-	        android:layout_marginBottom="35dp" />
+	        android:background="@drawable/button" />
 	    
 	</LinearLayout>
 		
