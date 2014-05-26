@@ -22,8 +22,9 @@ public class MainActivity extends Activity implements OnClickListener {
 	private ImageButton redSolid, redDashed, redKick, redPlayer, blueSolid, blueDashed, blueKick, bluePlayer, eraseBtn, clearBtn;
 	
 	// Local variables
-	private int brushSize = 6;
-	private int eraserSize = 70;
+	private int brushSize = 6,
+				eraserSize = 70,
+				playerSize = 50;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -90,22 +91,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(View view){
-		if (view.getId() == R.id.blue_marker) {
-			// Set eraser as false
-			drawView.setErase(false);
-			
-			// Change brush size
-			drawView.setBrushSize(brushSize);
-			
-			// Set brush color
-			drawView.setColor(0xFF0000FF);
-			
-			// Set blueBtn as active and others as inactive
-			blueMarker.setBackgroundResource(R.drawable.button_active);
-			redMarker.setBackgroundResource(R.drawable.button);
-			greenMarker.setBackgroundResource(R.drawable.button);
-			eraseBtn.setBackgroundResource(R.drawable.button);
-		} else if (view.getId() == R.id.red_marker) {
+		if (view.getId() == R.id.red_solid) {
 			// Set eraser as false
 			drawView.setErase(false);
 			
@@ -115,12 +101,20 @@ public class MainActivity extends Activity implements OnClickListener {
 			// Set brush color
 			drawView.setColor(0xFFFF0000);
 			
-			// Set redMarker as active and others as inactive
-			blueMarker.setBackgroundResource(R.drawable.button);
-			redMarker.setBackgroundResource(R.drawable.button_active);
-			greenMarker.setBackgroundResource(R.drawable.button);
+			// Set dash as false
+			drawView.setDash(false);
+			
+			// Set current button as active and others as inactive
+			redSolid.setBackgroundResource(R.drawable.button_active);
+			redDashed.setBackgroundResource(R.drawable.button);
+			redKick.setBackgroundResource(R.drawable.button);
+			redPlayer.setBackgroundResource(R.drawable.button);
+			blueSolid.setBackgroundResource(R.drawable.button);
+			blueDashed.setBackgroundResource(R.drawable.button);
+			blueKick.setBackgroundResource(R.drawable.button);
+			bluePlayer.setBackgroundResource(R.drawable.button);
 			eraseBtn.setBackgroundResource(R.drawable.button);
-		} else if (view.getId() == R.id.green_marker) {
+		} else if (view.getId() == R.id.red_dashed) {
 			// Set eraser as false
 			drawView.setErase(false);
 			
@@ -128,12 +122,164 @@ public class MainActivity extends Activity implements OnClickListener {
 			drawView.setBrushSize(brushSize);
 			
 			// Set brush color
-			drawView.setColor(0xFF00FF00);
+			drawView.setColor(0xFFFF0000);
 			
-			// Set greenMarker as active and others as inactive
-			blueMarker.setBackgroundResource(R.drawable.button);
-			redMarker.setBackgroundResource(R.drawable.button);
-			greenMarker.setBackgroundResource(R.drawable.button_active);
+			// Set dash as true
+			drawView.setDash(true);
+			
+			// Set current button as active and others as inactive
+			redSolid.setBackgroundResource(R.drawable.button);
+			redDashed.setBackgroundResource(R.drawable.button_active);
+			redKick.setBackgroundResource(R.drawable.button);
+			redPlayer.setBackgroundResource(R.drawable.button);
+			blueSolid.setBackgroundResource(R.drawable.button);
+			blueDashed.setBackgroundResource(R.drawable.button);
+			blueKick.setBackgroundResource(R.drawable.button);
+			bluePlayer.setBackgroundResource(R.drawable.button);
+			eraseBtn.setBackgroundResource(R.drawable.button);
+		} else if (view.getId() == R.id.red_kick) {
+			// Set eraser as false
+			drawView.setErase(false);
+			
+			// Change brush size
+			drawView.setBrushSize(brushSize);
+			
+			// Set brush color
+			drawView.setColor(0xFFFF0000);
+			
+			// Set dash as false
+			drawView.setDash(false);
+			
+			// Set kick as true
+			// drawView.setKick(); // Turned off because it's not working and would cause app to crash
+			
+			// Set current button as active and others as inactive
+			redSolid.setBackgroundResource(R.drawable.button);
+			redDashed.setBackgroundResource(R.drawable.button);
+			redKick.setBackgroundResource(R.drawable.button_active);
+			redPlayer.setBackgroundResource(R.drawable.button);
+			blueSolid.setBackgroundResource(R.drawable.button);
+			blueDashed.setBackgroundResource(R.drawable.button);
+			blueKick.setBackgroundResource(R.drawable.button);
+			bluePlayer.setBackgroundResource(R.drawable.button);
+			eraseBtn.setBackgroundResource(R.drawable.button);
+		} else if (view.getId() == R.id.red_player) {
+			// Set eraser as false
+			drawView.setErase(false);
+			
+			// Change brush size
+			drawView.setBrushSize(playerSize);
+			
+			// Set brush color
+			drawView.setColor(0xFFFF0000);
+			
+			// Set dash as false
+			drawView.setDash(false);
+			
+			// Set current button as active and others as inactive
+			redSolid.setBackgroundResource(R.drawable.button);
+			redDashed.setBackgroundResource(R.drawable.button);
+			redKick.setBackgroundResource(R.drawable.button);
+			redPlayer.setBackgroundResource(R.drawable.button_active);
+			blueSolid.setBackgroundResource(R.drawable.button);
+			blueDashed.setBackgroundResource(R.drawable.button);
+			blueKick.setBackgroundResource(R.drawable.button);
+			bluePlayer.setBackgroundResource(R.drawable.button);
+			eraseBtn.setBackgroundResource(R.drawable.button);
+		} else if (view.getId() == R.id.blue_solid) {
+			// Set eraser as false
+			drawView.setErase(false);
+			
+			// Change brush size
+			drawView.setBrushSize(brushSize);
+			
+			// Set brush color
+			drawView.setColor(0xFF0000FF);
+			
+			// Set dash as false
+			drawView.setDash(false);
+			
+			// Set current button as active and others as inactive
+			redSolid.setBackgroundResource(R.drawable.button);
+			redDashed.setBackgroundResource(R.drawable.button);
+			redKick.setBackgroundResource(R.drawable.button);
+			redPlayer.setBackgroundResource(R.drawable.button);
+			blueSolid.setBackgroundResource(R.drawable.button_active);
+			blueDashed.setBackgroundResource(R.drawable.button);
+			blueKick.setBackgroundResource(R.drawable.button);
+			bluePlayer.setBackgroundResource(R.drawable.button);
+			eraseBtn.setBackgroundResource(R.drawable.button);
+		} else if (view.getId() == R.id.blue_dashed) {
+			// Set eraser as false
+			drawView.setErase(false);
+			
+			// Change brush size
+			drawView.setBrushSize(brushSize);
+			
+			// Set brush color
+			drawView.setColor(0xFF0000FF);
+			
+			// Set dash as true
+			drawView.setDash(true);
+			
+			// Set current button as active and others as inactive
+			redSolid.setBackgroundResource(R.drawable.button);
+			redDashed.setBackgroundResource(R.drawable.button);
+			redKick.setBackgroundResource(R.drawable.button);
+			redPlayer.setBackgroundResource(R.drawable.button);
+			blueSolid.setBackgroundResource(R.drawable.button);
+			blueDashed.setBackgroundResource(R.drawable.button_active);
+			blueKick.setBackgroundResource(R.drawable.button);
+			bluePlayer.setBackgroundResource(R.drawable.button);
+			eraseBtn.setBackgroundResource(R.drawable.button);
+		} else if (view.getId() == R.id.blue_kick) {
+			// Set eraser as false
+			drawView.setErase(false);
+			
+			// Change brush size
+			drawView.setBrushSize(brushSize);
+			
+			// Set brush color
+			drawView.setColor(0xFF0000FF);
+			
+			// Set dash as false
+			drawView.setDash(false);
+			
+			// Set kick as true
+			// drawView.setKick(); // Turned off because it's not working and would cause app to crash
+			
+			// Set current button as active and others as inactive
+			redSolid.setBackgroundResource(R.drawable.button);
+			redDashed.setBackgroundResource(R.drawable.button);
+			redKick.setBackgroundResource(R.drawable.button);
+			redPlayer.setBackgroundResource(R.drawable.button);
+			blueSolid.setBackgroundResource(R.drawable.button);
+			blueDashed.setBackgroundResource(R.drawable.button);
+			blueKick.setBackgroundResource(R.drawable.button_active);
+			bluePlayer.setBackgroundResource(R.drawable.button);
+			eraseBtn.setBackgroundResource(R.drawable.button);
+		} else if (view.getId() == R.id.blue_player) {
+			// Set eraser as false
+			drawView.setErase(false);
+			
+			// Change brush size
+			drawView.setBrushSize(playerSize);
+			
+			// Set brush color
+			drawView.setColor(0xFF0000FF);
+			
+			// Set dash as false
+			drawView.setDash(false);
+			
+			// Set current button as active and others as inactive
+			redSolid.setBackgroundResource(R.drawable.button);
+			redDashed.setBackgroundResource(R.drawable.button);
+			redKick.setBackgroundResource(R.drawable.button);
+			redPlayer.setBackgroundResource(R.drawable.button);
+			blueSolid.setBackgroundResource(R.drawable.button);
+			blueDashed.setBackgroundResource(R.drawable.button);
+			blueKick.setBackgroundResource(R.drawable.button);
+			bluePlayer.setBackgroundResource(R.drawable.button_active);
 			eraseBtn.setBackgroundResource(R.drawable.button);
 		} else if (view.getId() == R.id.erase_btn) {
 			// Set eraser as true
@@ -142,38 +288,22 @@ public class MainActivity extends Activity implements OnClickListener {
 			// Change brush size
 			drawView.setBrushSize(eraserSize);
 			
+			// Set brush color
+			drawView.setColor(0xFF0000FF);
+			
 			// Set dash as false
 			drawView.setDash(false);
 			
-			// Set eraseBtn as active and others as inactive
-			blueMarker.setBackgroundResource(R.drawable.button);
-			redMarker.setBackgroundResource(R.drawable.button);
-			greenMarker.setBackgroundResource(R.drawable.button);
+			// Set current button as active and others as inactive
+			redSolid.setBackgroundResource(R.drawable.button);
+			redDashed.setBackgroundResource(R.drawable.button);
+			redKick.setBackgroundResource(R.drawable.button);
+			redPlayer.setBackgroundResource(R.drawable.button);
+			blueSolid.setBackgroundResource(R.drawable.button);
+			blueDashed.setBackgroundResource(R.drawable.button);
+			blueKick.setBackgroundResource(R.drawable.button);
+			bluePlayer.setBackgroundResource(R.drawable.button);
 			eraseBtn.setBackgroundResource(R.drawable.button_active);
-		} else if (view.getId() == R.id.dashed_line) {
-			// Set dash as true
-			drawView.setDash(true);
-			
-			// Set dashedBtn as active and others as inactive
-			dashedBtn.setBackgroundResource(R.drawable.button_active);
-			solidBtn.setBackgroundResource(R.drawable.button);
-			kickBtn.setBackgroundResource(R.drawable.button);
-		} else if (view.getId() == R.id.solid_line) {
-			// Set dash as false
-			drawView.setDash(false);
-			
-			// Set solidBtn as active and others as inactive
-			dashedBtn.setBackgroundResource(R.drawable.button);
-			solidBtn.setBackgroundResource(R.drawable.button_active);
-			kickBtn.setBackgroundResource(R.drawable.button);
-		} else if (view.getId() == R.id.ball_kick) {
-			// Set kick as true
-			drawView.setKick();
-			
-			// Set kickBtn as active and others as inactive
-			dashedBtn.setBackgroundResource(R.drawable.button);
-			solidBtn.setBackgroundResource(R.drawable.button);
-			kickBtn.setBackgroundResource(R.drawable.button_active);
 		} else if (view.getId() == R.id.clear_btn) {
 			// Clear canvas
 			drawView.startNew();
