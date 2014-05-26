@@ -104,6 +104,9 @@ public class MainActivity extends Activity implements OnClickListener {
 			// Set dash as false
 			drawView.setDash(false);
 			
+			// Set player representation off
+			drawView.setPlayer(false);
+			
 			// Set current button as active and others as inactive
 			redSolid.setBackgroundResource(R.drawable.button_active);
 			redDashed.setBackgroundResource(R.drawable.button);
@@ -127,6 +130,9 @@ public class MainActivity extends Activity implements OnClickListener {
 			// Set dash as true
 			drawView.setDash(true);
 			
+			// Set player representation off
+			drawView.setPlayer(false);
+			
 			// Set current button as active and others as inactive
 			redSolid.setBackgroundResource(R.drawable.button);
 			redDashed.setBackgroundResource(R.drawable.button_active);
@@ -149,6 +155,9 @@ public class MainActivity extends Activity implements OnClickListener {
 			
 			// Set dash as false
 			drawView.setDash(false);
+			
+			// Set player representation off
+			drawView.setPlayer(false);
 			
 			// Set kick as true
 			// drawView.setKick(); // Turned off because it's not working and would cause app to crash
@@ -176,6 +185,9 @@ public class MainActivity extends Activity implements OnClickListener {
 			// Set dash as false
 			drawView.setDash(false);
 			
+			// Set player representation on
+			drawView.setPlayer(true);
+			
 			// Set current button as active and others as inactive
 			redSolid.setBackgroundResource(R.drawable.button);
 			redDashed.setBackgroundResource(R.drawable.button);
@@ -198,6 +210,9 @@ public class MainActivity extends Activity implements OnClickListener {
 			
 			// Set dash as false
 			drawView.setDash(false);
+			
+			// Set player representation off
+			drawView.setPlayer(false);
 			
 			// Set current button as active and others as inactive
 			redSolid.setBackgroundResource(R.drawable.button);
@@ -222,6 +237,9 @@ public class MainActivity extends Activity implements OnClickListener {
 			// Set dash as true
 			drawView.setDash(true);
 			
+			// Set player representation off
+			drawView.setPlayer(false);
+			
 			// Set current button as active and others as inactive
 			redSolid.setBackgroundResource(R.drawable.button);
 			redDashed.setBackgroundResource(R.drawable.button);
@@ -244,6 +262,9 @@ public class MainActivity extends Activity implements OnClickListener {
 			
 			// Set dash as false
 			drawView.setDash(false);
+			
+			// Set player representation off
+			drawView.setPlayer(false);
 			
 			// Set kick as true
 			// drawView.setKick(); // Turned off because it's not working and would cause app to crash
@@ -271,6 +292,9 @@ public class MainActivity extends Activity implements OnClickListener {
 			// Set dash as false
 			drawView.setDash(false);
 			
+			// Set player representation on
+			drawView.setPlayer(true);
+			
 			// Set current button as active and others as inactive
 			redSolid.setBackgroundResource(R.drawable.button);
 			redDashed.setBackgroundResource(R.drawable.button);
@@ -293,6 +317,9 @@ public class MainActivity extends Activity implements OnClickListener {
 			
 			// Set dash as false
 			drawView.setDash(false);
+			
+			// Set player representation off
+			drawView.setPlayer(false);
 			
 			// Set current button as active and others as inactive
 			redSolid.setBackgroundResource(R.drawable.button);

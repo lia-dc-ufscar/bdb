@@ -47,6 +47,9 @@ public class DrawingView extends View {
 	
 	// Ball kicking
 	private boolean ballKick;
+	
+	// Player representation
+	private boolean playerRepr;
 
 	public DrawingView(Context context, AttributeSet attrs){
 		super(context, attrs);
@@ -100,11 +103,18 @@ public class DrawingView extends View {
 		switch (event.getAction()) {
 		case MotionEvent.ACTION_DOWN:
 			drawPath.moveTo(touchX, touchY);
+			if (playerRepr) {
+				drawPath.lineTo(touchX+1, touchY+1);
+				drawCanvas.drawPath(drawPath, drawPaint);
+				drawPath.reset();
+			}
 			startX = touchX;
 			startY = touchY;
 			break;
 		case MotionEvent.ACTION_MOVE:
-			if (ballKick) {
+			if (playerRepr) {
+				break;
+			} else if (ballKick) {
 				if (this.distance(touchX, touchY, startX, startY) >= 5) {
 					drawPaint.setColor(0x000000FF);
 					drawPath.lineTo(touchX, touchY);
@@ -113,10 +123,14 @@ public class DrawingView extends View {
 				drawPath.lineTo(touchX, touchY);
 			break;
 		case MotionEvent.ACTION_UP:
-			drawPath.lineTo(touchX, touchY);
-			drawCanvas.drawPath(drawPath, drawPaint);
-			drawPath.reset();
-			break;
+			if (playerRepr)
+				break;
+			else {
+				drawPath.lineTo(touchX, touchY);
+				drawCanvas.drawPath(drawPath, drawPaint);
+				drawPath.reset();
+				break;
+			}
 		default:
 			return false;
 		}
@@ -163,6 +177,11 @@ public class DrawingView extends View {
 	public void setKick() {
 		effects = new DashPathEffect(new float[] {1, 1}, 0);
 		ballKick = true;
+	}
+	
+	// Set player representation on/off
+	public void setPlayer(boolean pl) {
+		playerRepr = pl;
 	}
 	
 	// Start new drawing
